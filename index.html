@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Author: Aileen Gatdula -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="./styles/styles.css">
+    
+    <script src="./js/functions.js" defer="defer"> </script>
+    <script src="./js/animeData.js" defer="defer"> </script>
+    <script src="./js/script.js" defer="defer"> </script>
+
+    <title>COMP 2132 - Final Project</title>
+</head>
+<body>
+    <header>
+        <img src="./images/mokona.svg" alt="mokona logo">
+        <h1>COMP 2132 - Final Project</h1>
+    </header>
+
+    <main   id="main">
+        <!-- Image Section -->
+        <div class="pictureSection">
+            <div>
+                <img src="./image-anime/nezuko.jpg" alt="nezuko" id="animePicture">
+            </div>
+            <div>
+                <img src="./images/Drawing-0.png" alt="hangman" id="hangmanPicture">
+            </div>
+        </div>
+
+        <!-- Guess Word Section -->
+        <div class="wordSection">
+            <p id="wordGuess"></p>
+            <p id="hint"></p>
+            <p id="incorrectGuess"></p>
+
+        </div>
+
+        <!-- Key Board Section -->
+        <div class="lettersSection">
+            <div id="keyboardSection">
+                <ul id="keyboard">
+                    <li class="letter" id="aKeys">A</li>
+                    <li class="letter" id="bKeys">B</li>
+                    <li class="letter" id="cKeys">C</li>
+                    <li class="letter" id="dKeys">D</li>
+                    <li class="letter" id="eKeys">E</li>
+                    <li class="letter" id="fKeys">F</li>
+                    <li class="letter" id="gKeys">G</li>
+                    <li class="letter" id="hKeys">H</li>
+                    <li class="letter" id="iKeys">I</li>
+                    <li class="letter" id="jKeys">J</li>
+                    <li class="letter" id="kKeys">K</li>
+                    <li class="letter" id="lKeys">L</li>
+                    <li class="letter" id="mKeys">M</li>
+                    <li class="letter" id="nKeys">N</li>
+                    <li class="letter" id="oKeys">O</li>
+                    <li class="letter" id="pKeys">P</li>
+                    <li class="letter" id="qKeys">Q</li>
+                    <li class="letter" id="rKeys">R</li>
+                    <li class="letter" id="sKeys">S</li>
+                    <li class="letter" id="tKeys">T</li>
+                    <li class="letter" id="uKeys">U</li>
+                    <li class="letter" id="vKeys">V</li>
+                    <li class="letter" id="wKeys">W</li>
+                    <li class="letter" id="xKeys">X</li>
+                    <li class="letter" id="yKeys">Y</li>
+                    <li class="letter" id="zKeys">Z</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerAbove">
+            <h3>COMP 2132 Final Project</h3>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/aileencleogatdula/"><img src="./images/linkedin02.png" alt="linkedin icon"></a></li>
+                <li><a href="mailto:random@outlook.com"><img src="./images/email-white-on-grey.svg" alt="email icon"></a></li>
+            </ul>
+        </div>
+
+        <div class="footerBottom">
+            <p>© 2022, Aileen Gatdula</p>
+        </div>  
+    </footer>
+
+
+    <aside id="popUp">
+        <div id="results"></div>
+        <div id="playAgain">
+            <a>Play Again</a>
+        </div>
+    </aside>   
+
+</body>
+</html>

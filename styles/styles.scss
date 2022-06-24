@@ -1,0 +1,338 @@
+//variable declaration
+$primary-color: #219EBC;
+$secondary-color: #8ECAE6;
+$dark-color: #023047;
+$font-color: antiquewhite;
+
+@mixin header-footer {
+    background-color: $primary-color;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin height-width($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+body {
+    background-color: $secondary-color;
+    margin: 0px;
+    font-family: 'Roboto Mono';
+}
+
+header {
+    @include header-footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    [alt="mokona logo"] {
+        @include height-width(50px, 50px);
+        margin: 10px;
+    }
+}
+
+
+main {
+    padding: 5% 0;
+    color: $font-color;
+    background-image: url("../images/chalkboard.png");
+}
+
+.pictureSection {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#animePicture {
+    height: 320px;
+    border: 8px solid rgba(253, 254, 255, 0.753); 
+}
+
+#hangmanPicture {
+    height: 370px;
+}
+
+.wordSection {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+#wordGuess {
+    font-size: 60px;
+    margin-bottom: 0px;
+    font-family: 'Rock Salt';
+}
+
+#hint {
+    font-size: 30px;
+    font-style: oblique;
+}
+
+#incorrectGuess {
+    font-size: 28px;
+    font: bolder;
+}
+
+
+#keyboard {
+    list-style: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#popUp{
+    @include height-width(30%, 25%);
+    position: fixed;
+    z-index: 1; 
+    padding: 30px 20px 5px 20px; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background-color:$secondary-color;
+    box-shadow: 10px 10px #888888;
+    color: white;
+    margin: auto;
+    opacity: 0;
+}
+
+#results {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#playAgain {
+    background-color: $font-color;
+    color: black;
+    border: none;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius:5px;
+}
+
+#playAgain:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+  
+#playAgain:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+  
+#playAgain:active {
+    box-shadow: $font-color 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+#closePopUp {
+    position:absolute;    
+    top:-20px;
+    right:20px;
+    cursor:pointer;
+}
+
+#popUp a:hover{
+    text-decoration: underline;
+    color:black;
+    font-size: large;
+}
+
+/*taken from codepen io, https://codepen.io/giumagnani/pen/jBNJKw*/
+.letter{
+    line-height: 2.8em;
+    box-sizing: border-box;
+    line-height: 80px;
+    font-size: 22px;
+    text-align: center;
+    width: 80px;
+    color: #555;
+    cursor: pointer;
+    margin: 3px 8px;
+    height: 80px;
+    border-color: #f2f2f2;
+    border-style: solid;
+    text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+    border-width: 1px;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+    font-family: sans-serif;
+    display: inline-block;
+    transition: box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+.letter:hover, .letter:focus {
+    transform: translateY(2px);
+}
+
+.letter:active {
+    box-shadow: 0 0 1px #888,0 1px 0 #fff, 0 0 0 #C0C0C0, 0 0px 30px rgba(rgb(68, 68, 68), 0.15), 2px 2px 4px rgba(rgb(68, 68, 68), 0.25), -2px 2px 4px rgba(rgb(68, 68, 68), 0.25), 0 0px 4px rgba(#444, 0.25);
+    transform: translateY(4px); 
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:palevioletred;
+    font-size: large;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.footerAbove {
+    @include header-footer;
+
+    h3 {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+
+        li {
+            list-style-type: none; 
+        }
+    }
+
+    img {
+        @include height-width(50px, 50px);
+    }
+}
+
+.footerBottom {
+    background-color: $dark-color;
+    color: $font-color;
+    display: flex;
+    justify-content: center;
+    font-size: smaller;
+}
+
+/* client is between 600px and 1175x wide, i.e. tablet (tested on an ipad mini) */
+@media screen and (min-width: 680px) and (max-width: 1000px) { 
+
+    body {
+        font-size: 1rem;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #animePicture, #hangmanPicture {
+        @include height-width(20rem, 20rem);
+    }
+
+    .wordSection {
+        width: 100%;
+    }
+
+    #wordGuess {
+        margin-top: 10px;
+    }
+
+    #popUp{
+        @include height-width(30%, 70%);
+    }
+   
+}
+
+@media screen and (min-width: 500px) and (max-width: 680px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    header h1{
+        text-align: center;
+    }
+
+    #animePicture, #hangmanPicture {
+        @include height-width(8rem, 8rem);
+    }
+
+    .wordSection {
+        width: 100%;
+    }
+
+    #wordGuess {
+        margin-top: 10px;
+    }
+
+    #popUp{
+        @include height-width(30%, 40%);
+    }
+  
+}
+
+/* client is 500px wide or less, i.e. phone */
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 1rem;
+    }
+
+    header h1{
+        text-align: center;
+    }
+
+    #animePicture, #hangmanPicture {
+        @include height-width(10rem, 10rem);
+    }
+
+    .wordSection {
+        width: 100%;
+    }
+
+    #wordGuess {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    
+    #hint {
+        font-size: 15px;
+    }
+    
+    #incorrectGuess {
+        font-size: 10px;
+    }
+
+    #popUp{
+        @include height-width(40%, 80%);
+        font-size: small;
+    }
+
+    #keyboard {
+        width: 100%;
+        padding: 0 0;
+        margin: 0;
+    }
+
+    .letter {
+        @include height-width(30px, 30px);
+        line-height: 30px;
+        font-size: 15px;
+    } 
+}
